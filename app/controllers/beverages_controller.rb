@@ -1,8 +1,6 @@
 class BeveragesController < ApplicationController
   def index
-    @beers = Beverage.new(permitted_params).beers
-    Rails.logger.debug @beers
-    Rails.logger.debug @beers.size
+    @sought_beers = Beverage.new(permitted_params).sought_beers
   end
 
   def show; end

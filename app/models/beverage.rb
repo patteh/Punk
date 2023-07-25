@@ -5,7 +5,7 @@ class Beverage
     @params = params
   end
 
-  def beers
+  def sought_beers
     Faraday.get(sought_beers_url).body
   end
 
