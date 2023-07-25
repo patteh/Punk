@@ -1,0 +1,15 @@
+.c-beverage
+  .c-beverage__image
+    = image_tag @beer['image_url'], height: '90%'
+
+  .c-beverage__name
+    = "#{@beer['name']}, #{@beer['abv']}%"
+
+  .c-beverage__description
+    = @beer['description']
+
+  .c-beverage__food-pairing
+    %p Food pairing:
+    - @beer['food_pairing'].each do |food|
+      = food
+      %br

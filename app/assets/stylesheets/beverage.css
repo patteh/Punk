@@ -1,0 +1,35 @@
+.c-beverage {
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 25px;
+
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    'image name .'
+    'image description .'
+    'image food-pairing .'
+}
+
+.c-beverage__image {
+  grid-area: image;
+  margin-top: 30px;
+  height: 200px;
+  justify-self: center;
+}
+
+.c-beverage__name {
+  grid-area: name;
+  margin-bottom: 30px;
+}
+
+.c-beverage__description {
+  grid-area: description;
+  margin-bottom: 30px;
+}
+
+.c-beverage__food-pairing {
+  grid-area: food-pairing;
+  margin-bottom: 30px;
+}

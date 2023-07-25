@@ -1,0 +1,28 @@
+:ruby
+  page = params[:page] || 1
+
+.c-beverages
+  .c-beverages__search
+    = form_with url: beverages_index_path, method: :get do |form|
+      = form.text_field :query
+      = form.submit 'Search'
+
+  - if params[:query].blank?
+    .c-beverages__blank-query
+      %p Enter your search query
+  - elsif @beers.blank?
+    .c-beverages__no-results
+      %p No beers found
+      %br
+
+      = link_to 'Previous', beverages_index_path(query: params[:query], page: page.to_i - 1) if page.to_i > 1
+  - else
+    .c-beverages__beers
+      - @beers.each do |beer|
+        = link_to "#{beer['name']}, #{beer['abv']}%", beverages_show_path(id: beer['id'])
+        %br
+
+      %br
+      %br
+      = link_to 'Previous', beverages_index_path(query: params[:query], page: page.to_i - 1) if page.to_i > 1
+      = link_to 'Next', beverages_index_path(query: params[:query], page: page.to_i + 1) if @beers.size == 10

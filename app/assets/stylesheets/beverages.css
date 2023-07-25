@@ -1,0 +1,35 @@
+.c-beverages {
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 25px;
+
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    '. search .'
+    '. blank-query .'
+    '. no-results .'
+    '. beers .';
+}
+
+.c-beverages__search {
+  grid-area: search;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.c-beverages__blank-query {
+  grid-area: blank-query;
+  margin-bottom: 30px;
+}
+
+.c-beverages__no-results {
+  grid-area: no-results;
+  margin-bottom: 30px;
+}
+
+.c-beverages__beers {
+  grid-area: beers;
+  margin-bottom: 30px;
+}
