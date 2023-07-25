@@ -1,7 +1,7 @@
 :ruby
   page = params[:page] || 1
 
-.div
+.c-beverages
   = form_with url: beverages_index_path, method: :get do |form|
     = form.text_field :query
     = form.submit 'Search'
@@ -10,6 +10,7 @@
     %p Enter your search query
   - elsif @beers.blank?
     %p No beers found
+    %br
 
     = link_to 'Previous', beverages_index_path(query: params[:query], page: page.to_i - 1) if page.to_i > 1
   - else
