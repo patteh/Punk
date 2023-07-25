@@ -14,7 +14,6 @@ class Beverage
 
   def sought_beers
     return if query.blank?
-    binding.pry
 
     JSON.parse(Faraday.get(sought_beers_url).body)
   end
