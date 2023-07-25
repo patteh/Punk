@@ -18,7 +18,12 @@ class Beverage
   def sought_beers
     return if query.blank?
 
-    JSON.parse(Faraday.get(sought_beers_url).body)
+    response = Faraday.get(sought_beers_url)
+    body = JSON.parse(response.body)
+    return if body.empty?
+    return if response.status != 200
+
+    body
   end
 
   private

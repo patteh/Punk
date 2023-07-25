@@ -33,4 +33,32 @@ describe Beverage do
       end
     end
   end
+
+  describe '#sought_beers' do
+    context 'when query is blank' do
+      it 'returns nil' do
+        params = { query: '' }
+
+        expect(described_class.new(params: params).sought_beers).to be_nil
+      end
+    end
+
+    context 'when query is present' do
+      it 'returns nil if the API returns an empty array' do
+        params = { query: 'dopefish_lives' }
+
+        expect(described_class.new(params: params).sought_beers).to be_nil
+      end
+
+      it 'returns an array of hashes of the beers if it gets a match' do
+        params = { query: 'stout'}
+
+        beers = described_class.new(params: params).sought_beers
+
+        expect(beers).to be_an Array
+        expect(beers.size).to eq 10
+        expect(beers.first['name']).to eq 'Misspent Youth'
+      end
+    end
+  end
 end
