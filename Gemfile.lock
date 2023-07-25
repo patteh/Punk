@@ -88,6 +88,10 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.1.1)
@@ -176,6 +180,7 @@ GEM
     reline (0.3.6)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -225,6 +230,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  faraday
   haml-rails
   importmap-rails
   jbuilder
