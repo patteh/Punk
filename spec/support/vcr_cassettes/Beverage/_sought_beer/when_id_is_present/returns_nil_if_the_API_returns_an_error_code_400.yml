@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.punkapi.com/v2/beers/0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.10
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Tue, 25 Jul 2023 16:55:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '184'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-ratelimit-limit,x-ratelimit-remaining,content-length,origin,content-type,accept
+      Cache-Control:
+      - public, max-age=14400, must-revalidate
+      Etag:
+      - W/"b8-1AXHg9Ka0yy3iYzxxUPJoGh7aYo"
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Dns-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Ratelimit-Limit:
+      - '3600'
+      X-Ratelimit-Remaining:
+      - '3353'
+      X-Ratelimit-Reset:
+      - '1690304494'
+      X-Vercel-Cache:
+      - MISS
+      X-Vercel-Id:
+      - arn1::sfo1::fnhdl-1690304141535-c2983ac04a47
+      X-Xss-Protection:
+      - 1; mode=block
+      Cf-Cache-Status:
+      - EXPIRED
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=soBLiPKnH6WYg4%2BLIVNczeOvejqNf2fq5%2FCQBw5PnyM1VSeIWRzGkrl0NVinmHQ6WReI%2Bt6CGlhxuFPZk%2FXJs07Bf4nRsZz%2FQ1MTd5kvOljHhnKITFafFihfzTzJkIjMGC4%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Vary:
+      - Accept-Encoding
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7ec5ee945823b518-OSL
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"statusCode":400,"error":"Bad Request","message":"Invalid query params","data":[{"location":"params","param":"beerId","msg":"beerId
+        must be a number and greater than 0","value":"0"}]}'
+  recorded_at: Tue, 25 Jul 2023 16:55:41 GMT
+recorded_with: VCR 6.2.0

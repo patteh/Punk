@@ -11,19 +11,19 @@ describe Beverage do
     end
 
     context 'when id is present' do
-      it 'returns nil if the API returns an error code 400' do
+      it 'returns nil if the API returns an error code 400', :vcr do
         params = { id: 0 }
 
         expect(described_class.new(params: params).sought_beer).to be_nil
       end
 
-      it 'returns nil if the API returns an error code 404' do
+      it 'returns nil if the API returns an error code 404', :vcr do
         params = { id: 9999 }
 
         expect(described_class.new(params: params).sought_beer).to be_nil
       end
 
-      it 'returns a hash of the beer if the API returns a 200' do
+      it 'returns a hash of the beer if the API returns a 200', :vcr do
         params = { id: 1 }
 
         beer = described_class.new(params: params).sought_beer
@@ -44,13 +44,13 @@ describe Beverage do
     end
 
     context 'when query is present' do
-      it 'returns nil if the API returns an empty array' do
+      it 'returns nil if the API returns an empty array', :vcr do
         params = { query: 'dopefish_lives' }
 
         expect(described_class.new(params: params).sought_beers).to be_nil
       end
 
-      it 'returns an array of hashes of the beers if it gets a match' do
+      it 'returns an array of hashes of the beers if it gets a match', :vcr do
         params = { query: 'stout'}
 
         beers = described_class.new(params: params).sought_beers
