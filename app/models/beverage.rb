@@ -42,4 +42,3 @@ class Beverage
     params[:page] || 1
   end
 end
-

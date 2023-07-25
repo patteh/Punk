@@ -1,6 +1,11 @@
 .div
+  = image_tag @beer['image_url']
+  %br
   = "#{@beer['name']}, #{@beer['abv']}%"
   %br
   = @beer['description']
   %br
-  = @beer['food_pairing']
+  %p Goes well with:
+  - @beer['food_pairing'].each do |food|
+    = food
+    %br
