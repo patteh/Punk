@@ -9,7 +9,10 @@ class Beverage
   def sought_beer
     return if id.blank?
 
-    JSON.parse(Faraday.get(sought_beer_url).body).first
+    response = Faraday.get(sought_beer_url)
+    return if response.status != 200
+
+    JSON.parse(response.body).first
   end
 
   def sought_beers
