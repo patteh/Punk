@@ -1,2 +1,7 @@
-%h1 Beverages#index
-%p Find me in app/views/beverages/index.html.erb
+.div
+  - if @sought_beers.blank?
+    %h2 No beers found
+  - else
+    - @sought_beers.each do |beer|
+      = link_to "#{beer['name']}, #{beer['abv']}%", beverages_show_path(beer['id'])
+      %br

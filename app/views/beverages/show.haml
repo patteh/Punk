@@ -1,2 +1,6 @@
-%h1 Beverages#show
-%p Find me in app/views/beverages/show.html.erb
+.div
+  = "#{@beer['name']}, #{@beer['abv']}%"
+  %br
+  = @beer['description']
+  %br
+  = @beer['food_pairing']
