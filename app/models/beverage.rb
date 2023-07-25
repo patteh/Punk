@@ -7,7 +7,7 @@ class Beverage
   end
 
   def sought_beer
-    return if id
+    return if id.blank?
 
     JSON.parse(Faraday.get(sought_beer_url).body).first
   end
