@@ -1,6 +1,6 @@
 class BeveragesController < ApplicationController
   def index
-    @sought_beers = Beverage.new(params: permitted_params).sought_beers
+    @beers = Beverage.new(params: permitted_params).sought_beers
   end
 
   def show
@@ -8,6 +8,6 @@ class BeveragesController < ApplicationController
   end
 
   def permitted_params
-    params.permit(:id, :query)
+    params.permit(:id, :query, :page)
   end
 end

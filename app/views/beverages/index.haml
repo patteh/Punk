@@ -5,9 +5,9 @@
 
   - if params[:query].blank?
     %p Enter your search query
-  - elsif @sought_beers.blank?
+  - elsif @beers.blank?
     %p No beers found
   - else
-    - @sought_beers.each do |beer|
+    - @beers.each do |beer|
       = link_to "#{beer['name']}, #{beer['abv']}%", beverages_show_path(beer['id'])
       %br
