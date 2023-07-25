@@ -11,3 +11,5 @@
     - @beers.each do |beer|
       = link_to "#{beer['name']}, #{beer['abv']}%", beverages_show_path(id: beer['id'])
       %br
+
+    = will_paginate @beers

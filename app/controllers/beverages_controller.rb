@@ -1,6 +1,7 @@
 class BeveragesController < ApplicationController
   def index
-    @beers = Beverage.new(params: permitted_params).sought_beers
+    sought_beers = Beverage.new(params: permitted_params).sought_beers
+    @beers = sought_beers.paginate(page: params[:page], per_page: 10) if sought_beers.present?
   end
 
   def show
