@@ -1,24 +1,23 @@
-# README
+# Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 3.2.2
 
-Things you may want to cover:
+# Installation instructions
 
-* Ruby version
+Clone the project. Cd in to the project folder and run:
 
-* System dependencies
+```bundle exec install```
 
-* Configuration
+# Starting the project
 
-* Database creation
+In the project folder run:
 
-* Database initialization
+```bundle exec rails s```
 
-* How to run the test suite
+and then visit localhost:3000 in your browser.
 
-* Services (job queues, cache servers, search engines, etc.)
+# Running the tests
 
-* Deployment instructions
+In the project folder run:
 
-* ...
+```bundle exec rspec```
