@@ -19,11 +19,9 @@ class Beverage
     return if query.blank?
 
     response = Faraday.get(sought_beers_url)
-    body = JSON.parse(response.body)
-    return if body.empty?
     return if response.status != 200
 
-    body
+    JSON.parse(response.body)
   end
 
   private

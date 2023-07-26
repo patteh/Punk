@@ -44,10 +44,10 @@ describe Beverage do
     end
 
     context 'when query is present' do
-      it 'returns nil if the API returns an empty array', :vcr do
+      it 'returns an empty array if no match', :vcr do
         params = { query: 'dopefish_lives' }
 
-        expect(described_class.new(params: params).sought_beers).to be_nil
+        expect(described_class.new(params: params).sought_beers).to eq []
       end
 
       it 'returns an array of hashes of the beers if it gets a match', :vcr do
